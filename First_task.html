@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Learning Hub - HTML, CSS & JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">
+                <i class="fas fa-code"></i>
+                Creative Learning Hub
+            </h1>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Welcome to My First Web Development Project
+                <span class="typing-text"></span>
+            </h1>
+            <p class="hero-subtitle">
+                Exploring the fundamentals of HTML, CSS, and JavaScript with creativity and style!
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="showWelcomeAlert()">
+                    <i class="fas fa-hand-wave"></i>
+                    Say Hello!
+                </button>
+                <button class="btn btn-secondary" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                    Toggle Theme
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop" 
+                 alt="Coding workspace" class="floating-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About This Project</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Learning Objectives</h3>
+                    <ul class="objectives-list">
+                        <li><i class="fas fa-check-circle"></i> Master basic HTML elements and structure</li>
+                        <li><i class="fas fa-check-circle"></i> Apply creative CSS styling and animations</li>
+                        <li><i class="fas fa-check-circle"></i> Implement interactive JavaScript functionality</li>
+                        <li><i class="fas fa-check-circle"></i> Create responsive and modern web design</li>
+                    </ul>
+                    <p>This project showcases the power of combining HTML structure, CSS styling, and JavaScript interactivity to create engaging web experiences.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-html5"></i>
+                        <h4>HTML</h4>
+                        <p>Structure & Content</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-css3-alt"></i>
+                        <h4>CSS</h4>
+                        <p>Styling & Layout</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fab fa-js-square"></i>
+                        <h4>JavaScript</h4>
+                        <p>Interactivity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Features Section -->
+    <section class="interactive-features">
+        <div class="container">
+            <h2 class="section-title">Interactive Features</h2>
+            <div class="features-grid">
+                <!-- Color Changer -->
+                <div class="feature-card">
+                    <h3><i class="fas fa-palette"></i> Color Changer</h3>
+                    <p>Click the button to change the background color!</p>
+                    <button class="btn btn-color" onclick="changeBackgroundColor()">
+                        Change Color
+                    </button>
+                </div>
+
+                <!-- Counter -->
+                <div class="feature-card">
+                    <h3><i class="fas fa-calculator"></i> Counter</h3>
+                    <p>Current count: <span id="counter">0</span></p>
+                    <div class="counter-buttons">
+                        <button class="btn btn-small" onclick="decrementCounter()">-</button>
+                        <button class="btn btn-small" onclick="incrementCounter()">+</button>
+                        <button class="btn btn-small" onclick="resetCounter()">Reset</button>
+                    </div>
+                </div>
+
+                <!-- Text Animator -->
+                <div class="feature-card">
+                    <h3><i class="fas fa-magic"></i> Text Animator</h3>
+                    <p id="animated-text">Click to animate this text!</p>
+                    <button class="btn btn-animate" onclick="animateText()">
+                        Animate Text
+                    </button>
+                </div>
+
+                <!-- Image Gallery -->
+                <div class="feature-card">
+                    <h3><i class="fas fa-images"></i> Image Gallery</h3>
+                    <div class="gallery-container">
+                        <img id="gallery-image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=150&fit=crop" 
+                             alt="Gallery image" class="gallery-img">
+                        <div class="gallery-controls">
+                            <button class="btn btn-small" onclick="previousImage()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn btn-small" onclick="nextImage()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect With Me</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@creativelearning.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Digital World, Internet</span>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form onsubmit="handleFormSubmit(event)">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Creative Learning Hub. Built with ❤️ using HTML, CSS & JavaScript</p>
+            <div class="social-links">
+                <a href="#" onclick="showSocialAlert('GitHub')"><i class="fab fa-github"></i></a>
+                <a href="#" onclick="showSocialAlert('LinkedIn')"><i class="fab fa-linkedin"></i></a>
+                <a href="#" onclick="showSocialAlert('Twitter')"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
