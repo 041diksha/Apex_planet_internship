@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Web Task – Forms, Layout, and DOM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <div class="brand">WebSkills<span>Lab</span></div>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#todo">To‑Do</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <section class="hero">
+        <h1>Build. Validate. Interact.</h1>
+        <p>Practice HTML forms, CSS layout, and JavaScript DOM manipulation with a sleek, responsive UI.</p>
+        <div class="hero-steps">
+          <div class="step">1. Contact Form</div>
+          <div class="step">2. JS Validation</div>
+          <div class="step">3. Responsive Layout</div>
+          <div class="step">4. Dynamic To‑Do</div>
+        </div>
+      </section>
+    </header>
+
+    <main class="container">
+      <section class="grid-layout">
+        <article id="contact" class="card contact-card">
+          <h2>Contact Us</h2>
+          <p class="section-desc">Send us a message. All fields are required.</p>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+              <small class="error" data-for="name"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+              <small class="error" data-for="email"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+              <small class="error" data-for="message"></small>
+            </div>
+
+            <button type="submit" class="btn primary">Send Message</button>
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <aside id="todo" class="card todo-card">
+          <h2>To‑Do List</h2>
+          <p class="section-desc">Add tasks, mark them done, or remove them. Your tasks are saved locally.</p>
+          <div class="todo-input-row">
+            <input id="todoInput" type="text" placeholder="Add a new task…" />
+            <button id="addTodoBtn" class="btn">Add</button>
+          </div>
+          <ul id="todoList" class="todo-list"></ul>
+          <div class="todo-footer">
+            <span id="todoCount">0 items</span>
+            <button id="clearCompletedBtn" class="btn subtle">Clear completed</button>
+          </div>
+        </aside>
+      </section>
+
+      
+    </main>
+
+    <footer class="site-footer">
+      <p>Made with ❤️ to practice modern web fundamentals.</p>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
