@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive SPA · Quiz · Carousel · Live Data</title>
+    <meta name="description" content="Single-page, responsive, and interactive website demo with quiz, carousel, and live API data." />
+    <meta property="og:title" content="Interactive SPA · Quiz · Carousel · Live Data" />
+    <meta property="og:description" content="Responsive SPA demonstrating advanced CSS and JS with quiz, carousel, and API." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-b7QKj4Q9tK0Jr8qfG1k0W2Qf1TnYv8k2w7w2nq4e9h0QmQ5t1dY0l1s4wBz7v2qS5o4m3m0mV7X7m2i0Zr+M0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <a class="sr-only" href="#home">Skip to content</a>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary">
+            <a class="brand" href="#home">Apex SPA</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                <li><a href="#carousel" class="nav-link">Carousel</a></li>
+                <li><a href="#live" class="nav-link">Live Data</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home" class="site-main">
+        <section class="section hero" data-aos="fade-up">
+            <div class="container">
+                <h1 class="headline">Build. Learn. Interact.</h1>
+                <p class="subtext">A single-page demo showcasing a quiz, image carousel, and live API data with modern CSS and vanilla JavaScript.</p>
+                <div class="actions">
+                    <a class="btn primary" href="#quiz">Try the Quiz</a>
+                    <a class="btn secondary" href="#live">See Live Data</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section features" aria-label="Features" data-aos="fade-up">
+            <div class="container grid three">
+                <article class="card feature">
+                    <h3>Interactive Quiz</h3>
+                    <p>Answer one question at a time with instant feedback and progress.</p>
+                </article>
+                <article class="card feature">
+                    <h3>Image Carousel</h3>
+                    <p>Swipe/arrow through images with autoplay, dots, and keyboard support.</p>
+                </article>
+                <article class="card feature">
+                    <h3>Live API Data</h3>
+                    <p>Fetch and cache jokes with graceful loading and error states.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="quiz" class="section quiz" aria-label="Quiz" data-aos="fade-up">
+            <div class="container">
+                <div class="card">
+                    <div class="quiz-header">
+                        <h2>JavaScript Quiz</h2>
+                        <span id="quiz-progress" class="muted">Question 1/6</span>
+                    </div>
+                    <div id="quiz-card" class="quiz-card animate__animated"></div>
+                    <div class="quiz-actions">
+                        <button id="quiz-submit" class="btn primary">Submit</button>
+                        <button id="quiz-next" class="btn ghost" disabled>Next</button>
+                        <button id="quiz-restart" class="btn secondary" hidden>Restart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carousel" class="section carousel-section" aria-label="Carousel" data-aos="fade-up">
+            <div class="container">
+                <div class="card">
+                    <h2>Image Carousel</h2>
+                    <div class="carousel" aria-roledescription="carousel">
+                        <div class="slides" id="slides"></div>
+                        <button class="carousel-btn prev" id="prev" aria-label="Previous">&#10094;</button>
+                        <button class="carousel-btn next" id="next" aria-label="Next">&#10095;</button>
+                        <div class="dots" id="dots" aria-label="Pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="live" class="section live" aria-label="Live Data" data-aos="fade-up">
+            <div class="container">
+                <div class="card">
+                    <h2>Live Joke</h2>
+                    <p class="muted">Powered by Official Joke API</p>
+                    <div id="joke-card" class="joke-card">
+                        <div id="joke-loader" class="loader" aria-hidden="true"></div>
+                        <div id="joke-text" class="joke-text" aria-live="polite"></div>
+                        <div id="joke-error" class="error" role="alert" hidden></div>
+                    </div>
+                    <div class="actions">
+                        <button id="get-joke" class="btn primary">Get a Joke</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about" aria-label="About" data-aos="fade-up">
+            <div class="container">
+                <div class="card">
+                    <h2>About</h2>
+                    <p>This SPA is built with semantic HTML5, CSS3, and vanilla JavaScript. It demonstrates responsive layouts, accessible interactions, animations, and API integration.</p>
+                    <ul class="muted">
+                        <li>Sticky navbar with smooth-scroll and active-section highlight</li>
+                        <li>Card-based quiz with progress and feedback</li>
+                        <li>Carousel with autoplay, dots, and keyboard support</li>
+                        <li>Live data with loading, errors, and caching</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <small>&copy; <span id="year"></span> Apex SPA</small>
+            <a class="back-to-top" href="#home">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script> AOS.init({ once: true, duration: 600, easing: 'ease-out' }); </script>
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+
