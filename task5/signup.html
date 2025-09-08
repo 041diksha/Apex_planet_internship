@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Signup - Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-card">
+            <h2>Signup</h2>
+            <form id="signup-form" autocomplete="on">
+                <label class="sr-only" for="signup-name">Full name</label>
+                <input id="signup-name" type="text" placeholder="Full name" required>
+                <label class="sr-only" for="signup-email">Email</label>
+                <input id="signup-email" type="email" placeholder="Email" required>
+                <label class="sr-only" for="signup-password">Password</label>
+                <input id="signup-password" type="password" placeholder="Password (min 6 chars)" required minlength="6">
+                <button type="submit" class="btn-primary">Create account</button>
+                <p class="muted" style="margin-top:8px;">Already have an account? <a href="./login.html">Login</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+    (function(){
+      function $(s){return document.querySelector(s)}
+      function saveUser(u){localStorage.setItem('t5_user', JSON.stringify(u))}
+      const form = $('#signup-form');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = $('#signup-name').value.trim();
+        const email = $('#signup-email').value.trim();
+        const password = $('#signup-password').value.trim();
+        if(!name || !email || password.length < 6){
+          alert('Please fill all fields. Password must be at least 6 characters.');
+          return;
+        }
+        saveUser({ name: name, email: email });
+        location.href = './index.html#home';
+      });
+    })();
+    </script>
+</body>
+</html>
+

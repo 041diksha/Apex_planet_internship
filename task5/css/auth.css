@@ -1,0 +1,57 @@
+/* Auth pages - gradient wave card */
+.auth-page {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 24px 16px;
+}
+
+.auth-page::before,
+.auth-page::after {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 60%;
+  background: radial-gradient(1200px 300px at 20% 60%, rgba(236, 72, 153, 0.25), transparent 60%),
+              radial-gradient(1200px 300px at 80% 40%, rgba(59, 130, 246, 0.25), transparent 60%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.auth-card {
+  width: min(420px, 92%);
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  backdrop-filter: blur(8px) saturate(140%);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  box-shadow: 0 10px 30px rgba(2, 8, 23, 0.08);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin: 0 0 14px;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.auth-card form input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin: 8px 0 12px;
+  background: #f8fafc;
+}
+
+.auth-card .btn-primary {
+  width: 100%;
+  margin-top: 4px;
+}
+

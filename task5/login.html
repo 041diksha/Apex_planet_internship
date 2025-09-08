@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login - Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-card">
+            <h2>Login</h2>
+            <form id="login-form" autocomplete="on">
+                <label class="sr-only" for="login-email">Email</label>
+                <input id="login-email" type="email" placeholder="Email" required>
+                <label class="sr-only" for="login-password">Password</label>
+                <input id="login-password" type="password" placeholder="Password" required minlength="6">
+                <button type="submit" class="btn-primary">Login</button>
+                <p class="muted" style="margin-top:8px;">Don't have an account? <a href="./signup.html">Signup</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+    (function(){
+      function $(s){return document.querySelector(s)}
+      function saveUser(u){localStorage.setItem('t5_user', JSON.stringify(u))}
+      const form = $('#login-form');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const email = $('#login-email').value.trim();
+        const password = $('#login-password').value.trim();
+        if(!email || password.length < 6){
+          alert('Enter a valid email and password (min 6 chars).');
+          return;
+        }
+        saveUser({ email: email, name: email.split('@')[0] });
+        location.href = './index.html#home';
+      });
+    })();
+    </script>
+</body>
+</html>
+
